@@ -75,11 +75,16 @@ var request = makeHttpObject();
 request.open("GET", "https://api.minetools.eu/ping/dove11992.aternos.me/25565", true);
 request.send(null);
 request.onreadystatechange = function() {
-  if (request.readyState == 4)
+  if (request.readyState == 4) {
     if ((request.responseText).indexOf("\\u00a74Server not found.") != -1) {
       document.getElementById("status").innerHTML = "Status: DOWN";
       document.getElementById("status").style.color = "red";
     }
+    if ((request.responseText).indexOf("{") == 0) { 
+      document.getElementById("status").innerHTML = "Status: DOWN";
+      document.getElementById("status").style.color = "red";
+    }
+  }
 };
 </script>
 </body>
