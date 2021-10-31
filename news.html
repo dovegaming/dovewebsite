@@ -55,6 +55,11 @@ a.active {
 <div id="news">
 </div>
 <script>
+var newsfile;
+newsfile=new XMLHttpRequest();
+newsfile.open('GET', "newsfile", false);
+newsfile.send();
+document.getElementById("news").innerHTML = newsfile.responseText;
 </script>
 </body>
 </html>
