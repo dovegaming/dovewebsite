@@ -17,7 +17,7 @@ h1, a, li {
 /* https://www.w3schools.com/howto/howto_css_topnav_centered.asp */
 nav {
   position: relative;
-  background-color: #333;
+  background-color: #333333;
   overflow: hidden;
 }
 a {
@@ -62,8 +62,10 @@ a.active {
 </ul>
 <h1>Server Address: dove11992.aternos.me</h1>
 <!--https://stackoverflow.com/questions/6375461/get-html-code-using-javascript-with-a-url/6375580!-->
-<h1 id="status">Status: \u001b[32;1mUP</h1>
+<h1 id="status">Status: UP</h1>
 <script>
+var status = document.getElementById("status");
+status.style.color = "green";
 function makeHttpObject() {try {return new XMLHttpRequest();}catch (error) {}try {return new ActiveXObject("Msxml2.XMLHTTP");}catch (error) {}try {return new ActiveXObject("Microsoft.XMLHTTP");}catch (error) {}throw new Error("Could not create HTTP request object.");}
 var request = makeHttpObject();
 request.open("GET", "https://api.minetools.eu/ping/dove11992.aternos.me/25565", true);
@@ -71,7 +73,8 @@ request.send(null);
 request.onreadystatechange = function() {
   if (request.readyState == 4)
     if ((request.responseText).indexOf("\\u00a74Server not found.") != -1) {
-      document.getElementById("status").innerHTML = "Status: \u001b[31;1mDOWN"
+      status.innerHTML = "Status: DOWN";
+      status.style.color = "red";
     }
 };
 </script>
