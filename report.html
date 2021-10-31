@@ -1,1 +1,57 @@
+<html>
+<head>
+<title>Dove Gaming</title>
+<style>
+@font-face {
+  font-family: 'Minecraft';
+  src: url('Minecraft.ttf');
+}
+body {
+  background-color: black;
+}
+h1, a, li {
+  font-family: Minecraft;
+  color: white;
+}
+
+/* https://www.w3schools.com/howto/howto_css_topnav_centered.asp */
+nav {
+  position: relative;
+  background-color: #333;
+  overflow: hidden;
+}
+a {
+  float: left;
+  color: #f0f0f0;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+a:hover {
+  background-color: #dddddd;
+  color: black;
+}
+a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+@media screen and (max-width: 600px) {
+  a {
+    float: none;
+    display: block;
+  }
+}
+</style>
+</head>
+<body>
+<nav>
+<a href="index.html">Home</a>
+<a href="report.html">Report</a>
+<a href="vote.html">Vote</a>
+<a href="about.html">About</a>
+</nav>
+<h1>Please use this Google Form to make suggestions or bug reports.</h1>
 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdQrinDWlRDnsxdeVycLH9TwNm2D2vAiLCAl5hjP9e0i90Q5A/viewform?embedded=true" width="700" height="520" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+</body>
+</html>
