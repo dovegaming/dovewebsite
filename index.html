@@ -76,7 +76,7 @@ a.active {
 <span class="label"></span>
 <div class="server-status">Dove's Minecraft Server is currently <span class="server-online"></span>!</div>
 <script>
- MinecraftAPI.getServerStatus('dove11992.aternos.me', { port: 25565 }, function (err, status) { if (err) { return document.querySelector('.server-status').innerHTML = 'Error loading status'; } document.querySelector('.server-online').innerHTML = status.online ? 'up' : 'down'; });
+MinecraftAPI.getServerStatus('dove11992.aternos.me', { port: 25565 }, function (err, status) { if (err) { return document.querySelector('.server-status').innerHTML = 'Error loading status'; } document.querySelector('.server-online').innerHTML = status.online ? 'up' : 'down'; });
 </script>
 </body>
 </html>
