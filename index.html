@@ -13,15 +13,6 @@ h1, a, li {
   font-family: Minecraft;
   color: white;
 }
-#status {
-  min-height: 3em;
-  min-width: device-width;
-  border: 1px solid #66ffff;
-  border-radius: 1em;
-  background-color: #eee;
-  padding: 0.5em;
-  margin: 0.5em;
-}
 
 /* https://www.w3schools.com/howto/howto_css_topnav_centered.asp */
 nav {
@@ -70,13 +61,19 @@ a.active {
 <li>Bedwars</li>
 </ul>
 <h1>Server Address: dove11992.aternos.me</h1>
-<!--https://stackoverflow.com/questions/37097271/add-checking-minecraft-server-status!-->
-<script src="https://mcapi.us/scripts/minecraft.js"></script>
-<div id="status">
-<span class="label"></span>
-<div class="server-status">Dove's Minecraft Server is currently <span class="server-online"></span>!</div>
+<!--https://stackoverflow.com/questions/6375461/get-html-code-using-javascript-with-a-url/6375580!-->
+<h1 id="status">Status: UP</h1>
 <script>
-MinecraftAPI.getServerStatus('dove11992.aternos.me', { port: 25565 }, function (err, status) { if (err) { return document.querySelector('.server-status').innerHTML = 'Error loading status'; } document.querySelector('.server-online').innerHTML = status.online ? 'up' : 'down'; });
+function makeHttpObject() {try {return new XMLHttpRequest();}catch (error) {}try {return new ActiveXObject("Msxml2.XMLHTTP");}catch (error) {}try {return new ActiveXObject("Microsoft.XMLHTTP");}catch (error) {}throw new Error("Could not create HTTP request object.");}
+var request = makeHttpObject();
+request.open("GET", "https://api.minetools.eu/ping/dove11992.aternos.me/25565", true);
+request.send(null);
+request.onreadystatechange = function() {
+  if (request.readyState == 4)
+    if ((request.responseText).indexOf("\\u00a74Server not found.") != -1) {
+      document.getElementById("status").innerHTML = "Status: DOWN"
+    }
+};
 </script>
 </body>
 </html>
