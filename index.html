@@ -87,8 +87,12 @@ request.onreadystatechange = function() {
       document.getElementById("status").style.color = "red";
     }
     if (document.getElementById("status").style.color != "red") {
-      const obj = JSON.parse(request.responseText);
-      document.getElementById("players").innerHTML = "Players: " + obj.players.online + "/" obj.players.max;
+      try {
+        const obj = JSON.parse(request.responseText);
+        document.getElementById("players").innerHTML = "Players: " + obj.players.online + "/" obj.players.max;
+      } catch (error) {
+        console.error(error);
+      }
     }
   }
 };
