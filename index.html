@@ -13,7 +13,6 @@ h1, a, li {
   font-family: Minecraft;
   color: white;
 }
-
 /* https://www.w3schools.com/howto/howto_css_topnav_centered.asp */
 nav {
   position: relative;
@@ -64,14 +63,13 @@ a.active {
 <li>CaveBlocks</li>
 <li>UHC</li>
 <li>Village Defense</li>
-</ul>
-<h1>Server Address: dove11992.aternos.me</h1>
-<!--https://stackoverflow.com/questions/6375461/get-html-code-using-javascript-with-a-url/6375580!-->
-<noscript>JavaScript is required for the functioning server status meter below. If JavaScript is disabled, the results will be default.</noscript>
-<h1 id="status">Status: UP</h1>
-<h1 id="players">Players: 0 &#47 0</h1>
-<script>
-document.getElementById("status").style.color = "green";
+ </ul>
+ <h1>Server Address: dove11992.aternos.me</h1>
+ <!--https://stackoverflow.com/questions/6375461/get-html-code-using-javascript-with-a-url/6375580!-->
+ <noscript>JavaScript is required for the functioning server status meter below. If JavaScript is disabled, the results will be default.</noscript>
+ <h1 id="status">Status: UP</h1>
+ <script>
+ document.getElementById("status").style.color = "green";
 function makeHttpObject() {try {return new XMLHttpRequest();}catch (error) {}try {return new ActiveXObject("Msxml2.XMLHTTP");}catch (error) {}try {return new ActiveXObject("Microsoft.XMLHTTP");}catch (error) {}throw new Error("Could not create HTTP request object.");}
 var request = makeHttpObject();
 request.open("GET", "https://api.minetools.eu/ping/dove11992.aternos.me/25565", true);
@@ -85,14 +83,6 @@ request.onreadystatechange = function() {
     if ((request.responseText).indexOf("{") != 0) { // Sometimes things go horribly wrong, such as the link being blocked. If the response is in a invalid format, then it will display that the server is down.
       document.getElementById("status").innerHTML = "Status: DOWN";
       document.getElementById("status").style.color = "red";
-    }
-    if (document.getElementById("status").style.color != "red") {
-      try {
-        const obj = JSON.parse(request.responseText);
-        document.getElementById("players").innerHTML = "Players: " + obj.players.online + " &#47 " obj.players.max;
-      } catch (error) {
-        console.error(error);
-      }
     }
   }
 };
