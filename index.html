@@ -82,7 +82,7 @@ request.onreadystatechange = function() {
       document.getElementById("status").innerHTML = "Status: DOWN";
       document.getElementById("status").style.color = "red";
     }
-    if ((requ est.responseText).indexOf("{") != 0) { // Sometimes things go horribly wrong, such as the link being blocked. If the response is in a invalid format, then it will display that the server is down.
+    if ((request.responseText).indexOf("{") != 0) { // Sometimes things go horribly wrong, such as the link being blocked. If the response is in a invalid format, then it will display that the server is down.
       document.getElementById("status").innerHTML = "Status: DOWN";
       document.getElementById("status").style.color = "red";
     }
