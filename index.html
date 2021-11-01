@@ -69,7 +69,7 @@ a.active {
 <!--https://stackoverflow.com/questions/6375461/get-html-code-using-javascript-with-a-url/6375580!-->
 <noscript>JavaScript is required for the functioning server status meter below. If JavaScript is disabled, the results will be default.</noscript>
 <h1 id="status">Status: UP</h1>
-<h1 id="players">Players: 0&#470</h1>
+<h1 id="players">Players: 0 &#47 0</h1>
 <script>
 document.getElementById("status").style.color = "green";
 function makeHttpObject() {try {return new XMLHttpRequest();}catch (error) {}try {return new ActiveXObject("Msxml2.XMLHTTP");}catch (error) {}try {return new ActiveXObject("Microsoft.XMLHTTP");}catch (error) {}throw new Error("Could not create HTTP request object.");}
@@ -89,7 +89,7 @@ request.onreadystatechange = function() {
     if (document.getElementById("status").style.color != "red") {
       try {
         const obj = JSON.parse(request.responseText);
-        document.getElementById("players").innerHTML = "Players: " + obj.players.online + "&#47" obj.players.max;
+        document.getElementById("players").innerHTML = "Players: " + obj.players.online + " &#47 " obj.players.max;
       } catch (error) {
         console.error(error);
       }
