@@ -86,6 +86,7 @@ request.onreadystatechange = function() {
       document.getElementById("status").innerHTML = "Status: DOWN";
       document.getElementById("status").style.color = "red";
     }
+    /*
     if (document.getElementById("status").style.color != "red") {
       try {
         const obj = JSON.parse(request.responseText);
@@ -93,6 +94,7 @@ request.onreadystatechange = function() {
       } catch (error) {
         console.error(error);
       }
+    */
     }
   }
 };
