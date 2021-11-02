@@ -56,7 +56,7 @@ a.active {
   grid-template-areas: "big-top big-top big-top small-top small-top" "small-middle small-middle big-middle big-middle big-middle" "big-bottom big-bottom big-bottom big-bottom big-bottom";
 }
 .block {
-  height: 90%;
+  height: 100%;
   width: 100%;
   border: 1px solid white;
   background: black;
@@ -64,6 +64,18 @@ a.active {
   transition: opacity 0.2s ease-out;
 }
 .block:hover {
+  transition: opacity 0.2s ease-in;
+  opacity: 1;
+}
+.block_bottom {
+  height: 60%;
+  width: 100%;
+  border: 1px solid white;
+  background: black;
+  opacity: 0.8;
+  transition: opacity 0.2s ease-out;
+}
+.block_bottom:hover {
   transition: opacity 0.2s ease-in;
   opacity: 1;
 }
@@ -102,9 +114,9 @@ a.active {
 <div id="b3" class="block"></div>
 <div id="b4" class="block"></div>
 <div class="bottom-block">
-<div id="b5" class="block"></div>
-<div id="b6" class="block"></div>
-<div id="b7" class="block"></div>
+<div id="b5" class="block_bottom"></div>
+<div id="b6" class="block_bottom"></div>
+<div id="b7" class="block_bottom"></div>
 </div> 
 </div>
 </body>
