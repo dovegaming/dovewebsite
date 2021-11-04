@@ -6,6 +6,15 @@
   font-family: 'Minecraft';
   src: url('Minecraft.ttf');
 }
+@font-face {
+  font-family: 'Simple';
+  /* You can change this to a another font if you like just one i thought looked good enough...*/
+  src: url('https://www.1001fonts.com/download/font/montserrat.regular.ttf')
+  }
+adrs {
+  font-family: Simple;
+  
+  }
 body {
   background-color: black;
 }
@@ -13,6 +22,7 @@ h1, a, li {
   font-family: Minecraft;
   color: white;
 }
+/* Hey TechDudie we should probable romve this link... kinda unprofessional*/
 /* https://www.w3schools.com/howto/howto_css_topnav_centered.asp */
 nav {
   position: relative;
@@ -69,7 +79,7 @@ a.active {
 <li>UHC</li>
 <li>Village Defense</li>
  </ul>
- <h1>Server Address: dove11992.aternos.me</h1>
+ <h1>Server Address: <div class="adrs">dove11992.aternos.me</div></h1>
  <!--https://stackoverflow.com/questions/6375461/get-html-code-using-javascript-with-a-url/6375580!-->
  <noscript>JavaScript is required for the functioning server status meter below. If JavaScript is disabled, the results will be default.</noscript>
  <h1 id="status">Status: UP</h1>
