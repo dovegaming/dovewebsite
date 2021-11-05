@@ -1,17 +1,16 @@
 <html>
 <head>
 <title>Dove Gaming</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 <style>
 @font-face {
   font-family: 'Minecraft';
   src: url('Minecraft.ttf');
 }
-@font-face {
-  font-family: 'Simple';
-  src: url('Simple.ttf')
-}
 .address {
-  font-family: Simple;  
+  font-family: 'Open Sans', sans-serif;
 }
 body {
   background-color: black;
@@ -20,7 +19,6 @@ h1, a, li {
   font-family: Minecraft;
   color: white;
 }
-/* Hey TechDudie we should probable romve this link... kinda unprofessional*/
 /* https://www.w3schools.com/howto/howto_css_topnav_centered.asp */
 nav {
   position: relative;
@@ -76,13 +74,13 @@ a.active {
 <li>CaveBlocks</li>
 <li>UHC</li>
 <li>Village Defense</li>
- </ul>
- <h1 class="address">Server Address: dove11992.aternos.me</div</h1>
- <!--https://stackoverflow.com/questions/6375461/get-html-code-using-javascript-with-a-url/6375580!-->
- <noscript>JavaScript is required for the functioning server status meter below. If JavaScript is disabled, the results will be default.</noscript>
- <h1 id="status">Status: UP</h1>
- <script>
- document.getElementById("status").style.color = "green";
+</ul>
+<h1 class="address">Server Address: dove11992.aternos.me</h1>
+<!--https://stackoverflow.com/questions/6375461/get-html-code-using-javascript-with-a-url/6375580!-->
+<noscript>JavaScript is required for the functioning server status meter below. If JavaScript is disabled, the results will be default.</noscript>
+<h1 id="status">Status: UP</h1>
+<script>
+document.getElementById("status").style.color = "green";
 function makeHttpObject() {try {return new XMLHttpRequest();}catch (error) {}try {return new ActiveXObject("Msxml2.XMLHTTP");}catch (error) {}try {return new ActiveXObject("Microsoft.XMLHTTP");}catch (error) {}throw new Error("Could not create HTTP request object.");}
 var request = makeHttpObject();
 request.open("GET", "https://api.minetools.eu/ping/dove11992.aternos.me/25565", true);
