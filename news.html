@@ -65,6 +65,12 @@ a.active {
 <script>
 var newsfile;
 newsfile = new XMLHttpRequest();
+newsfile.open('GET', "newsfile", false);
+newsfile.send();
+document.getElementById("news").innerHTML = newsfile.responseText;
+/*
+var newsfile;
+newsfile = new XMLHttpRequest();
 newsfile.open('GET', "Posts/main.py", false);
 newsfile.send();
 var splitted
@@ -72,6 +78,7 @@ splitted = newsfile.responceText.split('=')
 var output
 output = "<p>"+splitted[1]+"</p><p>"splitted[3]"<p></p>"splitted[5]"</p>"
 document.getElementById("news").innerHTML = output;
+*/
 </script>
 </body>
 </html>
