@@ -47,6 +47,9 @@ a.active {
     display: block;
   }
 }
+#status {
+  color: red;
+}
 </style>
 </head>
 <body>
@@ -80,7 +83,7 @@ a.active {
 <h1 class="address">IRC Channel: #dovegaming on Libera.Chat</h1>
 <!--https://stackoverflow.com/questions/6375461/get-html-code-using-javascript-with-a-url/6375580!-->
 <noscript>JavaScript is required for the functioning server status meter below. If JavaScript is disabled, the results will be default.</noscript>
-<h1 id="status">Status: UP</h1>
+<h1 id="status">Status: DOWN</h1>
 <script>
 document.getElementById("status").style.color = "green";
 function makeHttpObject() {try {return new XMLHttpRequest();}catch (error) {}try {return new ActiveXObject("Msxml2.XMLHTTP");}catch (error) {}try {return new ActiveXObject("Microsoft.XMLHTTP");}catch (error) {}throw new Error("Could not create HTTP request object.");}
